@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<link href="ProjCss.css" type="text/css" rel="stylesheet"/>
+<script src="jquery-3.3.1.js"></script>
+<script>
+			
+			let javaques=["Javascript is _________ language.","avaScript is ______ Side Scripting Language.","Why so JavaScript and Java have similar name?","When a user views a page containing a JavaScript program, which machine actually executes the script?","______ JavaScript is also called client-side JavaScript."," __________ JavaScript is also called server-side JavaScript.","What are variables used for in JavaScript Programs?","_____ JavaScript statements embedded in an HTML page can respond to user events such as mouse-clicks, form input, and page navigation."," What should appear at the very end of your JavaScript?"," Which of the following can't be done with client-side JavaScript?","Which of the following are capabilities of functions in JavaScript?"," Which of the following is not a valid JavaScript variable name?","______ tag is an extension to HTML that can enclose any number of JavaScript statements.","How does JavaScript store dates in a date object?"," Which of the following attribute can hold the JavaScript version?","What is the correct JavaScript syntax to write 'Hello World'?","Which of the following way can be used to indicate the LANGUAGE attribute?","Inside which HTML element do we put the JavaScript?","What is the correct syntax for referring to an external script called ' abc.js'?","Which types of image maps can be used with JavaScript?"," Which of the following navigator object properties is the same in both   Netscape and IE?"," Which of the following navigator object properties is the same in both   Netscape and IE?","What does the <noscript> tag do?","If para1 is the DOM object for a paragraph, what is the correct syntax to change the text within the paragraph?","JavaScript entities start with _______ and end with _________.","Which of the following best describes JavaScript?","Choose the server-side JavaScript object?"," Choose the client-side JavaScript object?"," Which of the following is not considered a JavaScript operator?"," ______method evaluates a string of JavaScript code in the context of the specified object."];
+			
+			
+			let javaoptions =["programming,scripting,Application,None Of These","Browser,ISP,None of These,Server","JavaScript is a stripped-down version of Java,JavaScript's syntax is loosely based on Java's,They both originated on the island of Java,None of the above"," The User's machine running a Web browser,The Web server,A central machine deep within Netscape's corporate offices,None of the above"," Microsoft,Navigator,LiveWire,Native"," Microsoft,Navigator,LiveWire,Native"," Storing numbers, dates, or other values,Varying randomly,Causing high-school algebra flashbacks,None of the above","Client-side,Server-side,Local,Native","The <\/script>,The <script>,The END statement,None of the above","Validating a form,Sending a form's contents by email,Storing the form's contents to a database file on the server,None of the above"," Return a value,Accept parameters and Return a value,Accept parameters,None of the above"," 2names,_first_and_last_names,FirstAndLast,None of the above","<SCRIPT>,<BODY>,<HEAD>,<TITLE>"," The number of milliseconds since January 1st, 1970,The number of days since January 1st, 1900,The number of seconds since Netscape's public stock offering.,None of the above"," LANGUAGE,SCRIPT,VERSION,None of the above"," LANGUAGE,SCRIPT,VERSION,None of the above"," <LANGUAGE=\"JavaScriptVersion\"><SCRIPT LANGUAGE=\"JavaScriptVersion\">,<SCRIPT LANGUAGE=\"JavaScriptVersion\">    JavaScript statements…<\/SCRIPT>,<SCRIPT LANGUAGE=\"JavaScriptVersion\"!>    JavaScript statements…<\/SCRIPT>","<js>,<scripting>,<script>,<javascript>","<script href=\" abc.js\">,<script name=\" abc.js\">,<script src=\" abc.js\">,None of the above"," Server-side image maps,Client-side image maps,Server-side image maps and Client-side image maps,None of the above","navigator.appCodeName,navigator.appName,navigator.appVersion,None of the above"," var txt = new Array(1:\"tim\",2:\"kim\",3:\"jim\"),var txt = new Array:1=(\"tim\")2=(\"kim\")3=(\"jim\"),var txt = new Array(\"tim\",\"kim\",\"jim\"),var txt = new Array=\"tim\",\"kim\",\"jim\""," Enclose text to be displayed by non-JavaScript browsers.,Prevents scripts on the page from executing.,Describes certain low-budget movies.,None of the above"," \"New Text\"?,para1.value=\"New Text\";,para1.firstChild.nodeValue= \"New Text\";,para1.nodeValue=\"New Text\";"," Semicolon + colon,Semicolon + Ampersand,Ampersand + colon,Ampersand + semicolon"," a low-level programming language.,a scripting language precompiled in the browser.,a compiled scripting language.,an object-oriented scripting language."," FileUpLoad,Function,File,Date"," Database,Cursor,Client,FileUpLoad"," new,this,delete,typeof","Eval,ParseInt,ParseFloat,Efloat"];
+			
+			
+			let javaans =["scripting","Browser"," JavaScript's syntax is loosely based on Java's","The User's machine running a Web browser","Navigator"," LiveWire"," Storing numbers, dates, or other values","Client-side","The <\/script>","Storing the form's contents to a database file on the server"," Accept parameters"," 2names","<SCRIPT>","The number of milliseconds since January 1st, 1970"," LANGUAGE","document.write(\"Hello World\")","<SCRIPT LANGUAGE=\"JavaScriptVersion\">    JavaScript statements…<\/SCRIPT>","\<script>","\<script src=\" abc.js\">"," Client-side image maps"," navigator.appCodeName"," var txt = new Array(\"tim\",\"kim\",\"jim\")","Enclose text to be displayed by non-JavaScript browsers.","para1.value=\"New Text\";","Ampersand + semicolon","an object-oriented scripting language.","File","FileUpLoad","this","Eval"];
+			
+			let num; 
+			let count = 0;
+			let result = 0;
+			
+			$(document).ready(function(){
+			$("#next").click(function(){
+			if($('input[value = a]:checked').length > 0){
+			
+			let value = document.getElementById("table1").rows[1].cells[1].innerHTML;
+			if (value == javaans[num]){
+			result++;
+			}
+			}
+			else if($('input[value=ab]:checked').length > 0){
+			let value = document.getElementById("table1").rows[1].cells[3].innerHTML;
+			if (value == javaans[num]){
+			result++;
+			}
+			}
+			else if($('input[value=abc]:checked').length > 0){
+			let value = document.getElementById("table1").rows[2].cells[1].innerHTML;
+			if (value == javaans[num]){
+			result++;
+			}
+			}
+			else if($('input[value=abcd]:checked').length > 0){
+		let value = document.getElementById("table1").rows[2].cells[3].innerHTML;
+			if (value == javaans[num]){
+			result++;
+			}
+			}
+			num = Math.floor(Math.random()*29)+0;
+			let pos = 0;
+			let target = ',';
+			let str = javaoptions[num];
+			let b;
+			
+			for (let i = 0 ; i < str.length ; i++)
+				{
+					let foundpos = str.indexOf(target , pos);
+					let s = str.slice( pos, foundpos);
+					if (i == 0)
+					{
+					$("#label1").text(s);
+					}
+					else if(i==1)
+					{
+					$("#label2").text(s);
+					}
+					else if (i == 2)
+					{
+					$("#label3").text(s);
+					
+					}
+					else if (i == 3)
+					{
+					$("#label4").text(s);
+					}
+					pos = foundpos + 1 ;
+					if(foundpos == -1  )
+					{
+						break;
+					}
+					
+				}
+				document.getElementById("radio1").checked=false;
+			document.getElementById("radio2").checked=false;
+			document.getElementById("radio3").checked=false;
+			document.getElementById("radio4").checked=false;
+			
+			$("#quest").text(javaques[num]);
+			count++;
+			if (count == 10 ){
+			next.disabled=true; 
+			submit.disabled = false;
+			}
+			});
+			
+			$("#submit").click(function(){
+				if($('input[value = a]:checked').length > 0){
+			let value = document.getElementById("table1").rows[1].cells[1].innerHTML;
+			if (value == javaans[num]){
+			result++;
+			}
+			}
+			else if($('input[value=ab]:checked').length > 0){
+			let value = document.getElementById("table1").rows[1].cells[3].innerHTML;
+			if (value == javaans[num]){
+			result++;
+			}
+			}
+			else if($('input[value=abc]:checked').length > 0){
+			let value = document.getElementById("table1").rows[2].cells[1].innerHTML;
+			if (value == javaans[num]){
+			result++;
+			}
+			}
+			else if($('input[value=abcd]:checked').length > 0){
+		let value = document.getElementById("table1").rows[2].cells[3].innerHTML;
+			if (value == javaans[num]){
+			result++;
+			}
+			}
+			$("#first").hide();
+			$("#second").show();
+			document.getElementById("rig").innerHTML="Your score is ("+result+") out of 10";
+			});
+			
+			});
+		
+			
+</script>
+
+</head>
+<body>
+<div id="first">
+	<div class="header">
+		<h2 align="center">The JavaScript Quiz</h2>
+	</div>
+	<div class="QTables">
+	<table align="center" height="400" style="font-family: verdana" id="table1">
+		<tr>
+			<td colspan="4" id ="quest" >Questions</td>
+		</tr>
+		<tr id="label" >
+			<td valign="top"><input type="radio" name="option1" id ="radio1" value = "a"></td>
+			<td valign="top" id="label1" class="options">Option1</td>
+			<td valign="top"><input type="radio" name="option1" id ="radio2" value = "ab"></td>
+			<td valign="top" id="label2" class="options">Option2</td>
+			
+		</tr>
+		
+		<tr>
+			<td valign="top"><input type="radio" name="option1" id ="radio3" value = "abc"></td>
+			<td valign="top" id="label3" class="options">Option3</td>
+			<td valign="top"><input type="radio" name="option1" id ="radio4" value = "abcd"></td>
+			<td valign="top" id="label4" class="options">Option4</td>
+			
+		</tr>
+		
+		
+	</table>
+	</div>
+	<div class="footer">
+		<table class="buttons">
+			<tr>
+				<td><input type="submit" value="Next" class='button' id ="next"></td>
+				<td><input type="submit" value="Submit" disabled class='button' id ="submit" "></td>
+			</tr>
+		</table>
+	</div>
+	
+</div>	
+<div id="second" style="text-align:center; display:none">
+	<h1 >Result</h1>
+	<span id="rig"><span>
+	<span id="perc"><span>
+</div>
+
+</body>
+</html>
